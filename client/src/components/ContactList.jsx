@@ -139,35 +139,53 @@ const ContactList = ({ contacts, onDelete, onUpdate, loading }) => {
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
                 {/* Header with Search */}
                 <div className="p-6 border-b border-slate-200">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                        <div>
-                            <h2 className="text-3xl font-bold text-slate-900">Contact List</h2>
-                            <p className="text-slate-600 mt-1">
-                                {filteredContacts.length === contacts.length
-                                    ? `Total contacts: ${contacts.length}`
-                                    : `Showing ${filteredContacts.length} of ${contacts.length} contacts`
-                                }
-                            </p>
+                    <div className="flex flex-col gap-4">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div>
+                                <h2 className="text-3xl font-bold text-slate-900">Contact List</h2>
+                                <p className="text-slate-600 mt-1">
+                                    {filteredContacts.length === contacts.length
+                                        ? `Total contacts: ${contacts.length}`
+                                        : `Showing ${filteredContacts.length} of ${contacts.length} contacts`
+                                    }
+                                </p>
+                            </div>
+
+                            {/* Search Bar */}
+                            <div className="relative w-full sm:w-64">
+                                <input
+                                    type="text"
+                                    placeholder="Search contacts..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full pl-10 pr-4 py-2 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 transition-all"
+                                />
+                                <svg
+                                    className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
                         </div>
 
-                        {/* Search Bar */}
-                        <div className="relative w-full sm:w-64">
-                            <input
-                                type="text"
-                                placeholder="Search contacts..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 transition-all"
-                            />
-                            <svg
-                                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </div>
+                        {/* Export Button */}
+                        {contacts.length > 0 && (
+                            <div className="flex justify-end">
+                                <Button
+                                    variant="secondary"
+                                    onClick={() => exportToCSV(sortedContacts)}
+                                    className="flex items-center gap-2"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    Export to CSV
+                                </Button>
+                            </div>
+                        )}
                     </div>
                 </div>
 
