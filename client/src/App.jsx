@@ -15,7 +15,7 @@ function App() {
 
   const fetchContacts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/contacts');
+      const response = await fetch('https://contact-management-8kc-xhl.vercel.app/api/contacts');
       const data = await response.json();
 
       if (data.success) {
@@ -38,7 +38,7 @@ function App() {
 
   const handleDeleteContact = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
+      const response = await fetch(`https://contact-management-8kc-xhl.vercel.app/api/contacts/${id}`, {
         method: 'DELETE',
       });
 
