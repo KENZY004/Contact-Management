@@ -108,7 +108,7 @@ const EditContactModal = ({ isOpen, onClose, contact, onContactUpdated }) => {
         setLoading(true);
 
         try {
-            const response = await fetch(`https://contact-management-8kc-xhl.vercel.app/api/contacts/${contact._id}`, {
+            const response = await fetch(`https://contact-management-six-phi.vercel.app/api/contacts/${contact._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

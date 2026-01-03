@@ -90,7 +90,7 @@ const ContactForm = ({ onContactAdded }) => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://contact-management-8kc-xhl.vercel.app/api/contacts', {
+            const response = await fetch('https://contact-management-six-phi.vercel.app/api/contacts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
