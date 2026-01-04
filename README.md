@@ -15,7 +15,7 @@ The project focuses on RESTful API design, data validation, and smooth user inte
 - Responsive UI (table view for desktop, card view for mobile)
 - Toast notifications, loading states, and confirmation dialogs
 
-
+---
 
 ## 🛠️ Tech Stack
 **Frontend:** React, Vite, Tailwind CSS, Axios  
@@ -55,5 +55,5 @@ npm run dev
 ---
 ## 🌐 Live Demo  
 Frontend: https://contact-management-t7ot.vercel.app  
-Backend API: https://contact-management-six-phi.vercel.app
+
 
