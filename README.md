@@ -54,6 +54,7 @@ npm run dev
 ```
 ---
 ## 🌐 Live Demo  
-Frontend: https://contact-management-t7ot.vercel.app  
+- **Frontend**: https://contact-management-t7ot.vercel.app
+- **Backend API**: https://contact-management-six-phi.vercel.app
 
 
